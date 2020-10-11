@@ -1,13 +1,13 @@
 import mongoose from "mongoose";
 
-const reviwSchema = mongoose.Schema(
+const reviewSchema = mongoose.Schema(
   {
     name: { type: String, required: true },
-    name: { type: Number, required: true },
+    rating: { type: Number, required: true },
     comment: { type: String, required: true },
   },
   {
-    timeStamps: true,
+    timestamps: true,
   }
 );
 
@@ -38,8 +38,8 @@ const productSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    reviews: [reviwSchema],
-    raing: {
+    reviews: [reviewSchema],
+    rating: {
       type: Number,
       required: true,
       default: 0,
@@ -61,7 +61,7 @@ const productSchema = mongoose.Schema(
     },
   },
   {
-    timeStamps: true,
+    timestamps: true,
   }
 );
 
