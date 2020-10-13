@@ -11,7 +11,11 @@ import {
   Card,
 } from "react-bootstrap";
 import Message from "../components/Message";
+<<<<<<< HEAD
 import { addToCart, removeFromCart } from "../actions/cartActions";
+=======
+import { addToCart } from "../actions/cartActions";
+>>>>>>> 6d6463d8022ff3fad475b2a23c96daaa441bdc46
 
 const CartScreen = ({ match, location, history }) => {
   const productId = match.params.id;
@@ -20,15 +24,19 @@ const CartScreen = ({ match, location, history }) => {
 
   const dispatch = useDispatch();
 
+<<<<<<< HEAD
   const cart = useSelector((state) => state.cart);
   const { cartItems } = cart;
 
+=======
+>>>>>>> 6d6463d8022ff3fad475b2a23c96daaa441bdc46
   useEffect(() => {
     if (productId) {
       dispatch(addToCart(productId, qty));
     }
   }, [dispatch, productId, qty]);
 
+<<<<<<< HEAD
   const removeFromCartHandler = (id) => {
     dispatch(removeFromCart(id));
   };
@@ -120,6 +128,11 @@ const CartScreen = ({ match, location, history }) => {
       </Col>
     </Row>
   );
+=======
+  console.log(qty);
+
+  return <div>Cart</div>;
+>>>>>>> 6d6463d8022ff3fad475b2a23c96daaa441bdc46
 };
 
 export default CartScreen;
